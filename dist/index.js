@@ -16399,7 +16399,7 @@ let rejectHiddenFolders = function (ignore) {
 	getSubFolders(".").forEach(folder => {
 		if (folder.charAt(0) == '.' && folder != ".git" && folder != ".github" && folder != ".husky") {
 			if (!ignore.includes(folder))
-				throw new Error(`Unexpected hidden folder: "${folder}"`)
+				console.trace(`Unexpected hidden folder: "${folder}"`)
 		}
 	})
 }
